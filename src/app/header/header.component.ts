@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   public isMenuCollapsed = true;
   constructor(config: NgbDropdownConfig) {
     config.placement = 'bottom-left';
-    config.autoClose = false;
+    config.autoClose = true;
    }
 
   ngOnInit(): void {
