@@ -10,6 +10,12 @@ import {NgbDropdownConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class HeaderComponent implements OnInit {
   public isMenuCollapsed = true;
+  public isDropDownCollapsed = true;
+
+  closeAll() {
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+    this.isDropDownCollapsed = !this.isDropDownCollapsed;
+  }
   constructor(config: NgbDropdownConfig) {
     config.placement = 'bottom-left';
     config.autoClose = true;

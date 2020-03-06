@@ -28,11 +28,11 @@
       </li>
       <div ngbDropdown>
         <li class="nav-item">
-          <a class="nav-link" id="dropdownConfig" (click)="isMenuCollapsed = true" ngbDropdownToggle role="button">Admin</a>
-          <div ngbDropdownMenu>
-            <a ngbDropdownItem href="#" [routerLink]="'/admin/list'">List</a>
-            <a ngbDropdownItem href="#" [routerLink]="'/admin/create'">Create</a>
-            <a ngbDropdownItem href="#" [routerLink]="'/admin/update'">Update</a>
+          <a class="nav-link" id="dropdownConfig" (click)="isDropDownCollapsed = !isDropDownCollapsed" ngbDropdownToggle role="button">Admin</a>
+          <div ngbDropdownMenu style="background-color: #d7e3ec;">
+            <a ngbDropdownItem href="#" [routerLink]="'/admin/list'" (click)="closeAll()">List</a>
+            <a ngbDropdownItem href="#" [routerLink]="'/admin/create'" (click)="closeAll()">Create</a>
+            <a ngbDropdownItem href="#" [routerLink]="'/admin/update'" (click)="closeAll()">Update</a>
           </div>
         </li>
       </div>

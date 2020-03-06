@@ -1,1 +1,32 @@
-<p>contact works!</p>
+<div class="container m-3">
+  <h3>Formulario de Contacto</h3>
+  <form *ngIf="!submitted" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        name="fullName"
+        placeholder="Type Full Name"
+        formControlName="fullName"
+      />
+      <br />
+      <input
+        class="form-control"
+        type="email"
+        name="email"
+        placeholder="Type your e-mail"
+        formControlName="email"
+      />
+      <br />
+      <textarea
+        class="form-control"
+        name="message"
+        placeholder="Type your message"
+        formControlName="message"
+      ></textarea>
+      <br />
+    </div>
+    <input type="submit" value="send" />
+  </form>
+</div>
+<span *ngIf="submitted">Thanks for contacting us</span>

@@ -9,11 +9,12 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import {AdminModule} from './admin/admin.module';
+import {FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HomeComponent, AboutComponent, ContactComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule,AdminModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule,AdminModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
