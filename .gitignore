@@ -25,6 +25,7 @@ speed-measure-plugin*.json
 
 # IDE - VSCode
 .vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -44,3 +45,32 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+Thumbs.db
+*~
+._*
+*.swp
+.Spotlight*
+.Trashes
+.gitignore
