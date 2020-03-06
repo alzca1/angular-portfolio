@@ -26,9 +26,16 @@
       <li class="nav-item">
         <a class="nav-link" href="#" [routerLink]="'/contact'" (click)="isMenuCollapsed = true">Contact</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" [routerLink]="'/admin'" (click)="isMenuCollapsed = true">Admin</a>
-      </li>
+      <div ngbDropdown>
+        <li class="nav-item">
+          <a class="nav-link" id="dropdownConfig" href="#" [routerLink]="'/admin/list'" (click)="isMenuCollapsed = true" ngbDropdownToggle>Admin</a>
+          <div ngbDropdownMenu>
+            <a ngbDropdownItem href="">List</a>
+            <a ngbDropdownItem href="">Create</a>
+            <a ngbDropdownItem href="">Update</a>
+          </div>
+        </li>
+      </div>
     </ul>
   </div>
 </nav>

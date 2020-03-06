@@ -13,7 +13,7 @@ import {AdminModule} from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, HomeComponent, AboutComponent, ContactComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, AdminModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule,AdminModule],
   providers: [],
   bootstrap: [AppComponent]
 })
