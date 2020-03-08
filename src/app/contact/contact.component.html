@@ -1,32 +1,68 @@
-<div class="container m-3">
-  <h3>Formulario de Contacto</h3>
-  <form *ngIf="!submitted" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <input
-        class="form-control"
-        type="text"
-        name="fullName"
-        placeholder="Type Full Name"
-        formControlName="fullName"
-      />
-      <br />
-      <input
-        class="form-control"
-        type="email"
-        name="email"
-        placeholder="Type your e-mail"
-        formControlName="email"
-      />
-      <br />
-      <textarea
-        class="form-control"
-        name="message"
-        placeholder="Type your message"
-        formControlName="message"
-      ></textarea>
-      <br />
+<div class="container d-flex align-self-center p-5 m-2">
+  <div class="p-4">
+    <div *ngIf="sent" class="color color-primary">
+      <h5 >Message sent. We'll contact you soon!</h5>
+      <button class="btn btn-primary" (click)="restartForm()">Send another message</button>
     </div>
-    <input type="submit" value="send" />
-  </form>
+    <div *ngIf="!sent">
+      <h3>Contact Form</h3>
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            name="fullName"
+            placeholder="Type Full Name"
+            formControlName="fullName"
+            [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }"
+          />
+          <div
+            *ngIf="submitted && f.fullName.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.fullName.errors.required">Name is required</div>
+          </div>
+          <br />
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            placeholder="Type your e-mail"
+            formControlName="email"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+            
+          />
+          <div
+            *ngIf="submitted && f.email.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.email.errors.required">E-mail is required</div>
+            <div *ngIf="f.email.errors.pattern">Valid E-mail is required</div>
+          </div>
+          <br />
+          <textarea
+            rows="4"
+            cols="40"
+            class="form-control"
+            name="message"
+            placeholder="Type your message"
+            formControlName="message"
+            minlength="20"
+            maxlength="400"
+            [ngClass]="{ 'is-invalid': submitted && f.message.errors }"
+          ></textarea>
+          <div
+            *ngIf="submitted && f.message.errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f.message.errors.required">Message is required</div>
+            <div *ngIf="f.message.errors.minlength">Message must be at least 20 characters</div>
+            <div *ngIf="f.message.errors.maxlength">Message cannot exceed 300 characters</div>
+          </div>
+          <br />
+        </div>
+        <button type="submit" value="send" class="btn btn-primary">Send</button>
+      </form>
+    </div>
+  </div>
 </div>
-<span *ngIf="submitted">Thanks for contacting us</span>

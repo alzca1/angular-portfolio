@@ -6,10 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+servers = [];
+number = 0; 
 
-  constructor() { }
+
+
+  constructor() {
+  
+   }
 
   ngOnInit(): void {
   }
+  
+  createServer(){
+    this.number++;
+    this.servers.unshift(this.number)
+  }
 
-}
+  
+ 
+
+  }
+
